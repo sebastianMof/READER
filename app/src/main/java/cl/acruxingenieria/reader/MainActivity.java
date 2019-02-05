@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity{
 
         configureTextViewData();
         configureButtonClear();
+        configureButtonQR();
         configureNFCAdapter();
     }
 
@@ -87,7 +88,19 @@ public class MainActivity extends AppCompatActivity{
 
             }
         });
+    }
 
+    private void configureButtonQR() {
+        Button bt = (Button) findViewById(R.id.buttonQR);
+        bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, QrBarcodeReaderActivity.class);
+                //startActivity(intent);
+                int code = 4545; // Esto puede ser cualquier código.
+                startActivityForResult(intent, code);
+            }
+        });
     }
 
     private void configureNFCAdapter(){
