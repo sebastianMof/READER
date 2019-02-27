@@ -96,7 +96,6 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, QrBarcodeReaderActivity.class);
-                //startActivity(intent);
                 int code = 4545; // Esto puede ser cualquier código.
                 startActivityForResult(intent, code);
             }
